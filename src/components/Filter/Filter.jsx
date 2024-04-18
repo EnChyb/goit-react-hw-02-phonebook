@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'; 
 
-export const Filter = (filter, onChange) => {
+export const Filter = (filter, onFilterChange) => {
 
     return (
         <label>Find contacts by name:
@@ -9,7 +9,7 @@ export const Filter = (filter, onChange) => {
                 type='text'
                 name="filter"
                 placeholder='Search contact...'
-                onChange={onChange}
+                onChange={onFilterChange}
             />
         </label>
     )
@@ -17,5 +17,5 @@ export const Filter = (filter, onChange) => {
 
 Filter.propTypes = {
     filter: PropTypes.string,
-    onChange: PropTypes.func,
+    onFilterChange: PropTypes.func,
 }
