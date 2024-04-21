@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types'; 
 
-export const Filter = (filter, onFilterChange) => {
+export const Filter = ({ filter, setFilter }) =>{
+    // const setFilterValue = (e) => {
+//     const value = e.target.value;
+//     //setFilter(value);
+//     console.log(value);
+//   }
 
     return (
         <label>Find contacts by name:
@@ -9,7 +14,7 @@ export const Filter = (filter, onFilterChange) => {
                 type='text'
                 name="filter"
                 placeholder='Search contact...'
-                onChange={onFilterChange}
+                onChange={e => setFilter(e.target.value)}
             />
         </label>
     )
@@ -17,5 +22,5 @@ export const Filter = (filter, onFilterChange) => {
 
 Filter.propTypes = {
     filter: PropTypes.string,
-    onFilterChange: PropTypes.func,
+    setFilter: PropTypes.func,
 }
