@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'; 
+import css from './Filter.module.css'
 
 export const Filter = ({ filter, setFilter }) =>{
     // const setFilterValue = (e) => {
@@ -8,8 +9,9 @@ export const Filter = ({ filter, setFilter }) =>{
 //   }
 
     return (
-        <label>Find contacts by name:
-            <input
+        <div className={css.filter}>
+        <label className={css.label}>Find contacts by name:
+            <input className={css.input}
                 value={filter}
                 type='text'
                 name="filter"
@@ -17,6 +19,8 @@ export const Filter = ({ filter, setFilter }) =>{
                 onChange={e => setFilter(e.target.value)}
             />
         </label>
+        </div>
+
     )
 }
 
